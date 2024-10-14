@@ -1,7 +1,7 @@
 package org.motins.dao;
 
-import config.DatabaseConfig;
-import entity.Autorizada;
+import org.motins.config.DatabaseConfig;
+import org.motins.entity.Autorizada;
 import org.motins.exception.AutorizadaDaoException;
 
 import java.sql.*;
@@ -26,9 +26,8 @@ public class AutorizadaDaoImpl implements AutorizadaDao {
     @Override
     public void create(Autorizada autorizada) throws AutorizadaDaoException {
         String sql = "INSERT INTO T_CON_AUTORIZADA (ID_AUTORIZADA, NM_AUTORIZADA, NR_CNPJ) VALUES (?, ?, ?)";
-        try {
-            Connection connection = db.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement(sql);
+        try (Connection connection = db.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(sql)){
 
             connection.setAutoCommit(false);
             pstmt.setInt(1, autorizada.getIdAutorizada());
@@ -36,9 +35,9 @@ public class AutorizadaDaoImpl implements AutorizadaDao {
             pstmt.setString(3, autorizada.getCnpj());
             pstmt.executeUpdate();
             connection.commit();
-            connection.close();
+
         } catch (SQLException e) {
-            throw new AutorizadaDaoException("Nenhum dado inserido na T_CON_AUTORIZADA", e);
+            throw new AutorizadaDaoException("Nenhum dado inserido na T_CON_AUTORIZADA");
         }
     }
 
@@ -59,7 +58,7 @@ public class AutorizadaDaoImpl implements AutorizadaDao {
                 result.add(new Autorizada(idAutorizada, nome, cnpj));
             }
         } catch (SQLException e) {
-            throw new AutorizadaDaoException("Nenhum dado encontrado", e);
+            throw new AutorizadaDaoException("Nenhum dado encontrado");
         }
 
         return result;
@@ -68,17 +67,16 @@ public class AutorizadaDaoImpl implements AutorizadaDao {
     @Override
     public void update(Autorizada autorizada) throws AutorizadaDaoException {
         String sql = "UPDATE T_CON_AUTORIZADA SET NM_AUTORIZADA = ?, NR_CNPJ = ? WHERE ID_AUTORIZADA = ?";
-        try {
-            Connection connection = db.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement(sql);
+        try (Connection connection = db.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(sql)){
+
             pstmt.setString(1, autorizada.getNome());
             pstmt.setString(2, autorizada.getCnpj());
             pstmt.setInt(3, autorizada.getIdAutorizada());
             pstmt.executeUpdate();
             connection.commit();
-            connection.close();
         } catch (SQLException e) {
-            throw new AutorizadaDaoException("Nenhum dado atualizado na T_AUTORIZADA", e);
+            throw new AutorizadaDaoException("Nenhum dado atualizado na T_AUTORIZADA");
         }
     }
 
@@ -86,16 +84,14 @@ public class AutorizadaDaoImpl implements AutorizadaDao {
     public void delete(int id) throws AutorizadaDaoException {
         String sql = "DELETE FROM T_CON_AUTORIZADA WHERE ID_AUTORIZADA = ?";
 
-        try {
-            Connection connection = db.getConnection();
-            connection.setAutoCommit(false);
-            PreparedStatement pstmt = connection.prepareStatement(sql);
+        try (Connection connection = db.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(sql)){
             pstmt.setInt(1, id);
             pstmt.executeUpdate();
             connection.commit();
-            connection.close();
+
         } catch (SQLException e) {
-            throw new AutorizadaDaoException("Nenhum dado excluído da T_CON_AUTORIZADA", e);
+            throw new AutorizadaDaoException("Nenhum dado excluído da T_CON_AUTORIZADA");
         }
     }
 }

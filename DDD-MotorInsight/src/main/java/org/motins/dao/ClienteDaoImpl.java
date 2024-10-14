@@ -1,7 +1,7 @@
 package org.motins.dao;
 
-import config.DatabaseConfig;
-import entity.Cliente;
+import org.motins.config.DatabaseConfig;
+import org.motins.entity.Cliente;
 import org.motins.exception.ClienteDaoException;
 
 
@@ -51,25 +51,9 @@ public class ClienteDaoImpl implements ClienteDao {
                 clientes.add(new Cliente(rs.getInt("id_cliente"), rs.getString("tp_cliente"), rs.getString("st_cliente")));
             }
         } catch (SQLException e) {
-            throw new ClienteDaoException("Erro ao ler os clientes: " + e.getMessage(), e);
+            throw new ClienteDaoException("Erro ao ler os clientes: " + e.getMessage());
         }
         return clientes;
-    }
-
-    @Override
-    public Cliente readById(int id) throws ClienteDaoException {
-        String sql = "SELECT * FROM T_CON_CLIENTE WHERE id_cliente = ?";
-        try (Connection connection = db.getConnection();
-             PreparedStatement pstmt = connection.prepareStatement(sql)) {
-            pstmt.setInt(1, id);
-            ResultSet rs = pstmt.executeQuery();
-            if (rs.next()) {
-                return new Cliente(rs.getInt("id_cliente"), rs.getString("tp_cliente"), rs.getString("st_cliente"));
-            }
-        } catch (SQLException e) {
-            throw new ClienteDaoException("Erro ao ler o cliente: " + e.getMessage(), e);
-        }
-        return null;
     }
 
     @Override
@@ -82,7 +66,7 @@ public class ClienteDaoImpl implements ClienteDao {
             pstmt.setInt(3, cliente.getIdCliente());
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            throw new ClienteDaoException("Erro ao atualizar o cliente: " + e.getMessage(), e);
+            throw new ClienteDaoException("Erro ao atualizar o cliente: " + e.getMessage());
         }
     }
 
@@ -94,7 +78,7 @@ public class ClienteDaoImpl implements ClienteDao {
             pstmt.setInt(1, id);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            throw new ClienteDaoException("Erro ao deletar o cliente: " + e.getMessage(), e);
+            throw new ClienteDaoException("Erro ao deletar o cliente: " + e.getMessage());
         }
     }
 }

@@ -1,7 +1,7 @@
 package org.motins.dao;
 
-import config.DatabaseConfig;
-import entity.Endereco;
+import org.motins.config.DatabaseConfig;
+import org.motins.entity.Endereco;
 import org.motins.exception.EnderecoDaoException;
 
 
@@ -27,7 +27,7 @@ public class EnderecoDaoImpl implements EnderecoDao {
 
             pstmt.setInt(1, endereco.getIdEndereco());
             pstmt.setString(2, endereco.getRua());
-            pstmt.setString(3, endereco.getNumeroCasa());
+            pstmt.setString(3, endereco.getNumeroEndereco());
             pstmt.setString(4, endereco.getBairro());
             pstmt.setString(5, endereco.getCidade());
             pstmt.setString(6, endereco.getUf());
@@ -41,7 +41,7 @@ public class EnderecoDaoImpl implements EnderecoDao {
             connection.commit(); // Confirma a transação
 
         } catch (SQLException e) {
-            throw new EnderecoDaoException("Erro ao inserir o endereço: " + e.getMessage(), e);
+            throw new EnderecoDaoException("Erro ao inserir o endereço: " + e.getMessage());
         }
     }
 
@@ -56,7 +56,7 @@ public class EnderecoDaoImpl implements EnderecoDao {
 
             while (rs.next()) {
                 result.add(new Endereco(
-                        rs.getInt("D_ENDERECO"),
+                        rs.getInt("ID_ENDERECO"),
                         rs.getString("NM_RUA"),
                         rs.getString("NR_ENDERECO"),
                         rs.getString("NM_BAIRRO"),
@@ -86,7 +86,7 @@ public class EnderecoDaoImpl implements EnderecoDao {
             connection.setAutoCommit(false); // Inicia a transação
 
             pstmt.setString(1, endereco.getRua());
-            pstmt.setString(2, endereco.getNumeroCasa());
+            pstmt.setString(2, endereco.getNumeroEndereco());
             pstmt.setString(3, endereco.getBairro());
             pstmt.setString(4, endereco.getCidade());
             pstmt.setString(5, endereco.getUf());

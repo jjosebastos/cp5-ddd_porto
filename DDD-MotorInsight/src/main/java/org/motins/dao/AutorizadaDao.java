@@ -1,6 +1,6 @@
 package org.motins.dao;
 
-import entity.Autorizada;
+import org.motins.entity.Autorizada;
 import org.motins.exception.AutorizadaDaoException;
 
 import java.sql.SQLException;
