@@ -2,9 +2,8 @@ package org.motins.dao;
 
 
 import org.motins.entity.Pagamento;
-import org.motins.exception.PagamentoDaoException;
+import org.motins.exception.dao.PagamentoDaoException;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface PagamentoDao {

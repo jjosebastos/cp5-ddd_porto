@@ -1,4 +1,4 @@
-package org.motins.exception;
+package org.motins.exception.dao;
 
 public class PessoaJuridicaDaoException extends Exception {
     public PessoaJuridicaDaoException(String message) {

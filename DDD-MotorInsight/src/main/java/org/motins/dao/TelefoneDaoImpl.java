@@ -2,7 +2,7 @@ package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.entity.Telefone;
-import org.motins.exception.TelefoneDaoException;
+import org.motins.exception.dao.TelefoneDaoException;
 
 import java.sql.*;
 import java.util.ArrayList;

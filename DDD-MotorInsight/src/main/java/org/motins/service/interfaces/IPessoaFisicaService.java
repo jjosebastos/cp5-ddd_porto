@@ -6,13 +6,12 @@ import java.util.List;
 
 public interface IPessoaFisicaService {
     //TODO: CREATE
-    void create(PessoaFisica pessoaFisica);
+    void create(PessoaFisica pessoaFisica) throws PessoaFisicaServiceException;
     //TODO: READ
-    List<PessoaFisica> listAll() ;
+    List<PessoaFisica> listAll() throws PessoaFisicaServiceException;
     //TODO: UPDATE
-    void update(PessoaFisica pessoaFisica);
+    void update(PessoaFisica pessoaFisica) throws PessoaFisicaServiceException;
     //TODO: DELETE
-    void delete(int id);
-    //TODO: FIND BY ID
-    PessoaFisica findById(int id);
+    void delete(int id) throws PessoaFisicaServiceException;
+
 }

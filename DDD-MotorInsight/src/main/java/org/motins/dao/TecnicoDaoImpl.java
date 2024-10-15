@@ -2,13 +2,12 @@ package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.entity.Tecnico;
-import org.motins.exception.TecnicoDaoException;
+import org.motins.exception.dao.TecnicoDaoException;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class TecnicoDaoImpl implements TecnicoDao {
     private static TecnicoDaoImpl instance;

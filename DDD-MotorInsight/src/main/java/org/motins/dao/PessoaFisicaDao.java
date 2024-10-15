@@ -1,7 +1,7 @@
 package org.motins.dao;
 
 import org.motins.entity.PessoaFisica;
-import org.motins.exception.PessoaFisicaDaoException;
+import org.motins.exception.dao.PessoaFisicaDaoException;
 
 import java.util.List;
 

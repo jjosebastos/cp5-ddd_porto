@@ -1,9 +1,8 @@
 package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
-import org.motins.dao.PessoaJuridicaDao;
 import org.motins.entity.PessoaJuridica;
-import org.motins.exception.PessoaJuridicaDaoException;
+import org.motins.exception.dao.PessoaJuridicaDaoException;
 
 import java.sql.*;
 import java.util.ArrayList;

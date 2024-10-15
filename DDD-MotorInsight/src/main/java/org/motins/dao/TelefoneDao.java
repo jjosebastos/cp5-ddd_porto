@@ -1,9 +1,8 @@
 package org.motins.dao;
 
 import org.motins.entity.Telefone;
-import org.motins.exception.TelefoneDaoException;
+import org.motins.exception.dao.TelefoneDaoException;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface TelefoneDao {

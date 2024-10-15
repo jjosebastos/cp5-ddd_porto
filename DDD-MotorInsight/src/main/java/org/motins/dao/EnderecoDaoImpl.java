@@ -2,7 +2,7 @@ package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.entity.Endereco;
-import org.motins.exception.EnderecoDaoException;
+import org.motins.exception.dao.EnderecoDaoException;
 
 
 import java.sql.*;

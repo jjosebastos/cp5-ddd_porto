@@ -1,4 +1,4 @@
-package org.motins.exception;
+package org.motins.exception.dao;
 
 public class EnderecoDaoException extends Exception {
     public EnderecoDaoException(String message) {

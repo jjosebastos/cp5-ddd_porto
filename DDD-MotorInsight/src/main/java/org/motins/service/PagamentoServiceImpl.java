@@ -28,21 +28,37 @@ public class PagamentoServiceImpl implements IPagamentoService {
 
     @Override
     public void create(Pagamento pagamento) throws PagamentoServiceException {
-
+        try {
+            pagamentoDao.create(pagamento);
+        } catch (Exception e) {
+            throw new PagamentoServiceException("Não foi possivel criar em T_CON_PAGAMENTO",e);
+        }
     }
 
     @Override
     public List<Pagamento> listAll() throws PagamentoServiceException {
-        return List.of();
+        try {
+            return pagamentoDao.readAll();
+        } catch (Exception e) {
+            throw new PagamentoServiceException("Não foi possível listar os pagamentos", e);
+        }
     }
 
     @Override
     public void update(Pagamento pagamento) throws PagamentoServiceException {
-
+        try {
+            pagamentoDao.update(pagamento);
+        } catch (Exception e) {
+            throw new PagamentoServiceException("Não foi possível atualizar em T_CON_PAGAMENTO", e);
+        }
     }
 
     @Override
     public void delete(int id) throws PagamentoServiceException {
-
+        try{
+            pagamentoDao.delete(id);
+        } catch (Exception e){
+            throw new PagamentoServiceException("Não foi possível atualizar em T_CON_PAGAMENTO", e);
+        }
     }
 }

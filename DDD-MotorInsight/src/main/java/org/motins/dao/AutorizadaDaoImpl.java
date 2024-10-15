@@ -2,7 +2,7 @@ package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.entity.Autorizada;
-import org.motins.exception.AutorizadaDaoException;
+import org.motins.exception.dao.AutorizadaDaoException;
 
 import java.sql.*;
 import java.util.ArrayList;

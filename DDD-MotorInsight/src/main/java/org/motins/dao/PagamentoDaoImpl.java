@@ -2,10 +2,9 @@ package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.entity.Pagamento;
-import org.motins.exception.PagamentoDaoException;
+import org.motins.exception.dao.PagamentoDaoException;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 

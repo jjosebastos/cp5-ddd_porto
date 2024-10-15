@@ -3,10 +3,8 @@ package org.motins;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.*;
 import org.motins.entity.*;
-import org.motins.exception.*;
+import org.motins.exception.dao.*;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {

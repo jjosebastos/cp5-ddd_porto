@@ -2,7 +2,7 @@ package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.entity.PessoaFisica;
-import org.motins.exception.PessoaFisicaDaoException;
+import org.motins.exception.dao.PessoaFisicaDaoException;
 
 import java.sql.*;
 import java.util.ArrayList;

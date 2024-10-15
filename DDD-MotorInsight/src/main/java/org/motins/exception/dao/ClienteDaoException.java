@@ -1,4 +1,4 @@
-package org.motins.exception;
+package org.motins.exception.dao;
 
 public class ClienteDaoException extends Exception {
     public ClienteDaoException(String message) {

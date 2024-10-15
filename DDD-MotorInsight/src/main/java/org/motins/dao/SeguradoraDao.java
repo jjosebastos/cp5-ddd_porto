@@ -2,9 +2,8 @@ package org.motins.dao;
 
 
 import org.motins.entity.Seguradora;
-import org.motins.exception.SeguradoraDaoException;
+import org.motins.exception.dao.SeguradoraDaoException;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface SeguradoraDao {
