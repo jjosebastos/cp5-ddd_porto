@@ -1,18 +1,18 @@
 package org.motins.service.interfaces;
 
 import org.motins.entity.Telefone;
+import org.motins.exception.service.TelefoneServiceException;
 
 import java.util.List;
 
 public interface ITelefoneService {
     //TODO: CREATE
-    void create(Telefone telefone);
+    void create(Telefone telefone) throws TelefoneServiceException;
     //TODO: READ
-    List<Telefone> findAll();
+    List<Telefone> findAll() throws TelefoneServiceException;
     //TODO: UPDATE
-    void update(Telefone telefone);
+    void update(Telefone telefone) throws TelefoneServiceException;
     //TODO: DELETE
-    void delete(int id);
-    //TODO: FIND BY ID
-    Telefone findById(int id);
+    void delete(int id) throws TelefoneServiceException;
+
 }

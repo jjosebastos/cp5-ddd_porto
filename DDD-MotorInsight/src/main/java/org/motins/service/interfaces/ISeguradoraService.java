@@ -1,19 +1,18 @@
 package org.motins.service.interfaces;
 
 import org.motins.entity.Seguradora;
+import org.motins.exception.service.SeguradoraServiceException;
 
 import java.util.List;
 
 public interface ISeguradoraService {
 
     //TODO: CREATE
-    void create(Seguradora seguradora);
+    void create(Seguradora seguradora) throws SeguradoraServiceException;
     //TODO: READ
-    List<Seguradora> listAll();
+    List<Seguradora> listAll() throws SeguradoraServiceException;
     //TODO: UPDATE
-    void update(Seguradora seguradora);
+    void update(Seguradora seguradora) throws SeguradoraServiceException;
     //TODO: DELETE
-    void delete(int id) ;
-    //TODO: FIND BY ID
-    Seguradora findById(int id);
+    void delete(int id) throws SeguradoraServiceException;
 }
