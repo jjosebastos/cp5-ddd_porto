@@ -2,7 +2,7 @@ package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.entity.Reparo;
-import org.motins.exception.ReparoDaoException;
+import org.motins.exception.dao.ReparoDaoException;
 
 import java.sql.*;
 import java.time.LocalDate;

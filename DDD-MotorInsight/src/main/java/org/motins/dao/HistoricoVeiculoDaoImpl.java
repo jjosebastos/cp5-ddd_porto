@@ -11,9 +11,17 @@ import java.util.List;
 
 public class HistoricoVeiculoDaoImpl implements HistoricoVeiculoDao {
     private final DatabaseConfig db;
+    private static HistoricoVeiculoDaoImpl instance;
 
-    public HistoricoVeiculoDaoImpl(DatabaseConfig db) {
+    private HistoricoVeiculoDaoImpl(DatabaseConfig db) {
         this.db = db;
+    }
+
+    public static HistoricoVeiculoDaoImpl getInstance(DatabaseConfig db) {
+        if (instance == null) {
+            instance = new HistoricoVeiculoDaoImpl(db);
+        }
+        return instance;
     }
 
     @Override

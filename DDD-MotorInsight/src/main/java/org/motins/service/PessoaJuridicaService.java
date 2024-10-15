@@ -1,13 +1,14 @@
 package org.motins.service;
 
 import org.motins.config.DatabaseConfig;
-import org.motins.dao.AutorizadaDao;
 import org.motins.dao.PessoaFisicaDao;
 import org.motins.dao.PessoaFisicaDaoImpl;
+import org.motins.dao.PessoaJuridicaDao;
+import org.motins.dao.PessoaJuridicaDaoImpl;
 import org.motins.entity.PessoaJuridica;
+import org.motins.exception.service.PessoaJuridicaServiceException;
 import org.motins.service.interfaces.IPessoaJuridicaService;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class PessoaJuridicaService implements IPessoaJuridicaService {
@@ -15,7 +16,7 @@ public class PessoaJuridicaService implements IPessoaJuridicaService {
     private static PessoaJuridicaService instance;
     DatabaseConfig db = new DatabaseConfig("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL",
             "rm559221","jn100800");
-    PessoaFisicaDao pessoaJuridicaDao = PessoaFisicaDaoImpl.getInstance(db);
+    PessoaJuridicaDao pessoaJuridicaDao = PessoaJuridicaDaoImpl.getInstance(db);
 
     private PessoaJuridicaService(){}
 
@@ -25,6 +26,7 @@ public class PessoaJuridicaService implements IPessoaJuridicaService {
         }
         return instance;
     }
+
 
     @Override
     public void create(PessoaJuridica pessoaJuridica) throws PessoaJuridicaServiceException{
@@ -61,5 +63,4 @@ public class PessoaJuridicaService implements IPessoaJuridicaService {
             throw new PessoaJuridicaServiceException("Não foi possível listar em T_CON_PESSOA_JURIDICA", e);
         }
     }
-
 }

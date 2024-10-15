@@ -8,6 +8,8 @@ import org.motins.exception.dao.AutorizadaDaoException;
 import org.motins.exception.service.AutorizadaServiceException;
 import org.motins.service.interfaces.IAutorizadaService;
 
+import java.util.List;
+
 public class AutorizadaServiceImpl implements IAutorizadaService {
 
     private static AutorizadaServiceImpl instance;
@@ -15,7 +17,7 @@ public class AutorizadaServiceImpl implements IAutorizadaService {
     DatabaseConfig db = new DatabaseConfig("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL",
             "rm559221","jn100800");
 
-    AutorizadaDao dao = AutorizadaDaoImpl.getInstance(db);
+    AutorizadaDao autorizadaDao = AutorizadaDaoImpl.getInstance(db);
     private AutorizadaServiceImpl(){}
 
     public static AutorizadaServiceImpl getInstance(){
@@ -29,7 +31,7 @@ public class AutorizadaServiceImpl implements IAutorizadaService {
     @Override
     public void create(Autorizada autorizada) throws AutorizadaServiceException {
         try {
-            dao.create(autorizada);
+            autorizadaDao.create(autorizada);
         } catch (AutorizadaDaoException e){
             throw new AutorizadaServiceException("Erro ao criar em autorizada",e);
         }
@@ -37,9 +39,18 @@ public class AutorizadaServiceImpl implements IAutorizadaService {
     }
 
     @Override
+    public List<Autorizada> listAll() throws AutorizadaServiceException {
+        try {
+            return autorizadaDao.readAll();
+        } catch (Exception e) {
+            throw new AutorizadaServiceException("Erro ao listar em autorizada",e);
+        }
+    }
+
+    @Override
     public void update(Autorizada autorizada) throws AutorizadaServiceException {
         try {
-            dao.update(autorizada);
+            autorizadaDao.update(autorizada);
         } catch (AutorizadaDaoException e){
             throw new AutorizadaServiceException("Erro ao atualizar em autorizada", e);
         }
@@ -47,12 +58,13 @@ public class AutorizadaServiceImpl implements IAutorizadaService {
     }
 
     @Override
-    public void delete(int id) {
-
+    public void delete(int id) throws AutorizadaServiceException{
+        try {
+            autorizadaDao.delete(id);
+        } catch (AutorizadaDaoException e){
+            throw new AutorizadaServiceException("Erro ao atualizar em autorizada", e);
+        }
     }
 
-    @Override
-    public Autorizada findById(int id) {
-        return null;
-    }
+
 }

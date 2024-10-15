@@ -6,6 +6,7 @@ import org.motins.dao.PessoaFisicaDao;
 import org.motins.dao.PessoaFisicaDaoImpl;
 
 import org.motins.entity.PessoaFisica;
+import org.motins.exception.service.PessoaFisicaServiceException;
 import org.motins.service.interfaces.IPessoaFisicaService;
 
 import java.util.List;
@@ -41,7 +42,7 @@ public class PessoaFisicaService implements IPessoaFisicaService {
         try {
             return pagamentoDao.readAll();
         } catch (Exception e) {
-            throw new PessoaFisicaServiceException("Não foi possível criar em T_CON_PESSOA_FISICA", e);
+            throw new PessoaFisicaServiceException("Não foi possível listar em T_CON_PESSOA_FISICA", e);
         }
     }
 
@@ -50,7 +51,7 @@ public class PessoaFisicaService implements IPessoaFisicaService {
         try {
             pagamentoDao.update(pessoaFisica);
         } catch (Exception e) {
-            throw new PessoaFisicaServiceException("Não foi possível criar em T_CON_PESSOA_FISICA", e);
+            throw new PessoaFisicaServiceException("Não foi possível atualizar em T_CON_PESSOA_FISICA", e);
         }
     }
 
@@ -59,7 +60,7 @@ public class PessoaFisicaService implements IPessoaFisicaService {
         try {
             pagamentoDao.delete(id);
         } catch (Exception e) {
-            throw new PessoaFisicaServiceException("Não foi possível criar em T_CON_PESSOA_FISICA", e);
+            throw new PessoaFisicaServiceException("Não foi possível excluir em T_CON_PESSOA_FISICA", e);
         }
     }
 

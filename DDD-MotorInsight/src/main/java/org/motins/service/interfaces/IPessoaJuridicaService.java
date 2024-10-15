@@ -1,6 +1,7 @@
 package org.motins.service.interfaces;
 
 import org.motins.entity.PessoaJuridica;
+import org.motins.exception.service.PessoaJuridicaServiceException;
 
 import java.util.List;
 

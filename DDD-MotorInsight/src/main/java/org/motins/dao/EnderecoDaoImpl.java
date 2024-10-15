@@ -11,9 +11,16 @@ import java.util.List;
 
 public class EnderecoDaoImpl implements EnderecoDao {
     private final DatabaseConfig db;
-
-    public EnderecoDaoImpl(DatabaseConfig db) {
+    private static EnderecoDaoImpl instance;
+    private EnderecoDaoImpl(DatabaseConfig db) {
         this.db = db;
+    }
+
+    public static EnderecoDaoImpl getInstance(DatabaseConfig db) {
+        if (instance == null) {
+            instance = new EnderecoDaoImpl(db);
+        }
+        return instance;
     }
 
     @Override
