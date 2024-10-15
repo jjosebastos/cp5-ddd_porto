@@ -26,8 +26,9 @@ public class AutorizadaDaoImpl implements AutorizadaDao {
     @Override
     public void create(Autorizada autorizada) throws AutorizadaDaoException {
         String sql = "INSERT INTO T_CON_AUTORIZADA (ID_AUTORIZADA, NM_AUTORIZADA, NR_CNPJ) VALUES (?, ?, ?)";
-        try (Connection connection = db.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement(sql)){
+        try {
+            Connection connection = db.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(sql);
 
             connection.setAutoCommit(false);
             pstmt.setInt(1, autorizada.getIdAutorizada());

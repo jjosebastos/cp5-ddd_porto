@@ -1,8 +1,8 @@
 package org.motins.dao;
 
 
-import config.DatabaseConfig;
-import entity.Veiculo;
+import org.motins.config.DatabaseConfig;
+import org.motins.entity.Veiculo;
 import org.motins.exception.VeiculoDaoException;
 
 import java.sql.*;
@@ -45,7 +45,7 @@ public class VeiculoDaoImpl implements VeiculoDao {
             connection.commit();
 
         } catch (SQLException e) {
-            throw new VeiculoDaoException("Erro ao inserir dados na T_CON_VEICULO: " + e.getMessage(), e);
+            throw new VeiculoDaoException("Erro ao inserir dados na T_CON_VEICULO: " + e.getMessage());
         }
     }
 
@@ -70,7 +70,7 @@ public class VeiculoDaoImpl implements VeiculoDao {
             }
 
         } catch (SQLException e) {
-            throw new VeiculoDaoException("Erro ao buscar dados na T_CON_VEICULO: " + e.getMessage(), e);
+            throw new VeiculoDaoException("Erro ao buscar dados na T_CON_VEICULO: " + e.getMessage());
         }
 
         return result;
@@ -95,7 +95,7 @@ public class VeiculoDaoImpl implements VeiculoDao {
             connection.commit();
 
         } catch (SQLException e) {
-            throw new VeiculoDaoException("Erro ao atualizar dados na T_CON_VEICULO: " + e.getMessage(), e);
+            throw new VeiculoDaoException("Erro ao atualizar dados na T_CON_VEICULO: " + e.getMessage());
         }
     }
 
@@ -112,7 +112,7 @@ public class VeiculoDaoImpl implements VeiculoDao {
             connection.commit();
 
         } catch (SQLException e) {
-            throw new VeiculoDaoException("Erro ao excluir dados da T_CON_VEICULO: " + e.getMessage(), e);
+            throw new VeiculoDaoException("Erro ao excluir dados da T_CON_VEICULO: " + e.getMessage());
         }
     }
 }

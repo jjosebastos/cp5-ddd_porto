@@ -1,7 +1,7 @@
 package org.motins.dao;
 
-import config.DatabaseConfig;
-import entity.Pagamento;
+import org.motins.config.DatabaseConfig;
+import org.motins.entity.Pagamento;
 import org.motins.exception.PagamentoDaoException;
 
 import java.sql.*;
@@ -58,7 +58,7 @@ public class PagamentoDaoImpl implements PagamentoDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new PagamentoDaoException("Erro ao inserir dados na tabela T_CON_PAGAMENTO", e);
+            throw new PagamentoDaoException("Erro ao inserir dados na tabela T_CON_PAGAMENTO");
         }
     }
 
@@ -84,7 +84,7 @@ public class PagamentoDaoImpl implements PagamentoDao {
                 ));
             }
         } catch (SQLException e) {
-            throw new PagamentoDaoException("Erro ao consultar dados na tabela T_CON_PAGAMENTO", e);
+            throw new PagamentoDaoException("Erro ao consultar dados na tabela T_CON_PAGAMENTO");
         }
         return result;
     }
@@ -121,7 +121,7 @@ public class PagamentoDaoImpl implements PagamentoDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new PagamentoDaoException("Erro ao atualizar dados na tabela T_CON_PAGAMENTO", e);
+            throw new PagamentoDaoException("Erro ao atualizar dados na tabela T_CON_PAGAMENTO");
         }
     }
 
@@ -138,7 +138,7 @@ public class PagamentoDaoImpl implements PagamentoDao {
 
             connection.commit();
         } catch (SQLException e) {
-            throw new PagamentoDaoException("Erro ao excluir dados na tabela T_CON_PAGAMENTO", e);
+            throw new PagamentoDaoException("Erro ao excluir dados na tabela T_CON_PAGAMENTO");
         }
     }
 }

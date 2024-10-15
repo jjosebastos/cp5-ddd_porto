@@ -1,7 +1,7 @@
 package org.motins.dao;
 
 
-import entity.Seguradora;
+import org.motins.entity.Seguradora;
 import org.motins.exception.SeguradoraDaoException;
 
 import java.sql.SQLException;

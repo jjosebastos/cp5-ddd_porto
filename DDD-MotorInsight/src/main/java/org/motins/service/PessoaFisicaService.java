@@ -1,6 +1,6 @@
 package org.motins.service;
 
-import org.motins.entity.pessoa.PessoaFisica;
+import org.motins.entity.PessoaFisica;
 import org.motins.service.interfaces.IPessoaFisicaService;
 
 import java.util.List;

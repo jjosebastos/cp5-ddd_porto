@@ -31,11 +31,12 @@ public class EnderecoDaoImpl implements EnderecoDao {
             pstmt.setString(4, endereco.getBairro());
             pstmt.setString(5, endereco.getCidade());
             pstmt.setString(6, endereco.getUf());
-            pstmt.setString(7, endereco.getComplemento());
-            pstmt.setObject(8, endereco.getIdCliente(), Types.INTEGER);
-            pstmt.setObject(9, endereco.getIdSeguradora(), Types.INTEGER);
-            pstmt.setObject(10, endereco.getIdAutorizada(), Types.INTEGER);
-            pstmt.setString(11, endereco.getCep());
+            pstmt.setString(7, endereco.getCep());
+            pstmt.setString(8, endereco.getComplemento());
+            pstmt.setObject(9, endereco.getIdCliente(), Types.INTEGER);
+            pstmt.setObject(10, endereco.getIdSeguradora(), Types.INTEGER);
+            pstmt.setObject(11, endereco.getIdAutorizada(), Types.INTEGER);
+
 
             pstmt.executeUpdate();
             connection.commit(); // Confirma a transação
@@ -61,16 +62,17 @@ public class EnderecoDaoImpl implements EnderecoDao {
                         rs.getString("NR_ENDERECO"),
                         rs.getString("NM_BAIRRO"),
                         rs.getString("NM_CIDADE"),
-                        rs.getString("SG_UNIDADE_FEDERATIVA"),
+                        rs.getString("SG_UF"),
+                        rs.getString("CEP"),
                         rs.getString("DS_COMPLEMENTO"),
                         rs.getInt("ID_CLIENTE"),
                         rs.getInt("ID_SEGURADORA"),
-                        rs.getInt("ID_AUTORIZADA"),
-                        rs.getString("CEP")
+                        rs.getInt("ID_AUTORIZADA")
+
                 ));
             }
         } catch (SQLException e) {
-            throw new EnderecoDaoException("Erro ao ler os endereços: " + e.getMessage(), e);
+            throw new EnderecoDaoException("Erro ao ler os endereços: " + e.getMessage());
         }
 
         return result;
@@ -90,18 +92,19 @@ public class EnderecoDaoImpl implements EnderecoDao {
             pstmt.setString(3, endereco.getBairro());
             pstmt.setString(4, endereco.getCidade());
             pstmt.setString(5, endereco.getUf());
-            pstmt.setString(6, endereco.getComplemento());
-            pstmt.setObject(7, endereco.getIdCliente(), Types.INTEGER);
-            pstmt.setObject(8, endereco.getIdSeguradora(), Types.INTEGER);
-            pstmt.setObject(9, endereco.getIdAutorizada(), Types.INTEGER);
-            pstmt.setString(10, endereco.getCep());
-            pstmt.setInt(11, endereco.getIdEndereco());
+            pstmt.setString(6, endereco.getCep());
+            pstmt.setString(7, endereco.getComplemento());
+            pstmt.setObject(8, endereco.getIdCliente(), Types.INTEGER);
+            pstmt.setObject(9, endereco.getIdSeguradora(), Types.INTEGER);
+            pstmt.setObject(10, endereco.getIdAutorizada(), Types.INTEGER);
+            pstmt.setString(11, endereco.getCep());
+            pstmt.setInt(12, endereco.getIdEndereco());
 
             pstmt.executeUpdate();
             connection.commit(); // Confirma a transação
 
         } catch (SQLException e) {
-            throw new EnderecoDaoException("Erro ao atualizar o endereço: " + e.getMessage(), e);
+            throw new EnderecoDaoException("Erro ao atualizar o endereço: " + e.getMessage());
         }
     }
 
@@ -115,7 +118,7 @@ public class EnderecoDaoImpl implements EnderecoDao {
             pstmt.setInt(1, id);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            throw new EnderecoDaoException("Erro ao excluir o endereço: " + e.getMessage(), e);
+            throw new EnderecoDaoException("Erro ao excluir o endereço: " + e.getMessage());
         }
     }
 }

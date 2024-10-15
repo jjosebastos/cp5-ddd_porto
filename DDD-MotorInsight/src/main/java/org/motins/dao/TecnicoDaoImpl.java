@@ -1,7 +1,7 @@
 package org.motins.dao;
 
-import config.DatabaseConfig;
-import entity.Tecnico;
+import org.motins.config.DatabaseConfig;
+import org.motins.entity.Tecnico;
 import org.motins.exception.TecnicoDaoException;
 
 import java.sql.*;
@@ -43,12 +43,12 @@ public class TecnicoDaoImpl implements TecnicoDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new TecnicoDaoException("Erro ao inserir dados na T_CON_TECNICO", e);
+            throw new TecnicoDaoException("Erro ao inserir dados na T_CON_TECNICO");
         }
     }
 
     @Override
-    public Optional<List<Tecnico>> readAll() throws TecnicoDaoException {
+    public List<Tecnico> readAll() throws TecnicoDaoException {
         String sql = "SELECT * FROM T_CON_TECNICO";
         List<Tecnico> result = new ArrayList<>();
 
@@ -66,10 +66,10 @@ public class TecnicoDaoImpl implements TecnicoDao {
                 result.add(new Tecnico(idTecnico, nome, dataNascimento, matricula, idAutorizada));
             }
         } catch (SQLException e) {
-            throw new TecnicoDaoException("Erro ao buscar dados na T_CON_TECNICO", e);
+            throw new TecnicoDaoException("Erro ao buscar dados na T_CON_TECNICO");
         }
 
-        return result.isEmpty() ? Optional.empty() : Optional.of(result);
+        return result;
     }
 
     @Override
@@ -90,7 +90,7 @@ public class TecnicoDaoImpl implements TecnicoDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new TecnicoDaoException("Erro ao atualizar dados na T_CON_TECNICO", e);
+            throw new TecnicoDaoException("Erro ao atualizar dados na T_CON_TECNICO");
         }
     }
 
@@ -106,7 +106,7 @@ public class TecnicoDaoImpl implements TecnicoDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new TecnicoDaoException("Erro ao excluir dados da T_CON_TECNICO", e);
+            throw new TecnicoDaoException("Erro ao excluir dados da T_CON_TECNICO");
         }
     }
 }

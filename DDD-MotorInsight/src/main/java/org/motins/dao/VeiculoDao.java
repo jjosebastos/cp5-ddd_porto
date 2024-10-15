@@ -1,6 +1,6 @@
 package org.motins.dao;
 
-import entity.Veiculo;
+import org.motins.entity.Veiculo;
 import org.motins.exception.VeiculoDaoException;
 
 import java.util.List;

@@ -1,5 +1,6 @@
 package org.motins.service;
 
+import org.motins.dao.AutorizadaDaoImpl;
 import org.motins.entity.Autorizada;
 import org.motins.service.interfaces.IAutorizadaService;
 
@@ -8,6 +9,8 @@ import java.util.List;
 public class AutorizadaService implements IAutorizadaService {
 
     private static AutorizadaService instance;
+    private AutorizadaDaoImpl autorizadaDao;
+    private Autorizada autorizada;
     private AutorizadaService(){}
 
     public static AutorizadaService getInstance(){
@@ -25,7 +28,8 @@ public class AutorizadaService implements IAutorizadaService {
 
     @Override
     public List<Autorizada> listAll() {
-        return List.of();
+        return
+                List.of();
     }
 
     @Override

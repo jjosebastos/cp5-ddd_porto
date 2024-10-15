@@ -1,6 +1,6 @@
 package org.motins.dao;
 
-import entity.HistoricoVeiculo;
+import org.motins.entity.HistoricoVeiculo;
 import org.motins.exception.HistoricoVeiculoDaoException;
 
 import java.sql.SQLException;

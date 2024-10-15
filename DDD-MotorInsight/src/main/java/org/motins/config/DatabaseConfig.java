@@ -16,6 +16,7 @@ public class DatabaseConfig {
         this.password = password;
     }
 
+
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, user,password);
     }

@@ -57,4 +57,19 @@ public class Autorizada {
                 '}';
     }
 
+    public abstract static class FactoryVeiculo {
+        public abstract Veiculo createVeiculo();
+
+    }
+
+    public static interface Veiculo {
+        void build();
+    }
+
+    public static class Moto implements Veiculo {
+        @Override
+        public void build() {
+
+        }
+    }
 }

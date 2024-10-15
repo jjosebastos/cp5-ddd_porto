@@ -1,7 +1,7 @@
 package org.motins.dao;
 
-import config.DatabaseConfig;
-import entity.Telefone;
+import org.motins.config.DatabaseConfig;
+import org.motins.entity.Telefone;
 import org.motins.exception.TelefoneDaoException;
 
 import java.sql.*;
@@ -41,7 +41,7 @@ public class TelefoneDaoImpl implements TelefoneDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new TelefoneDaoException("Erro ao inserir dados na T_CON_TELEFONE", e);
+            throw new TelefoneDaoException("Erro ao inserir dados na T_CON_TELEFONE");
         }
     }
 
@@ -66,7 +66,7 @@ public class TelefoneDaoImpl implements TelefoneDao {
                 result.add(new Telefone(idTelefone, numero, ddd, tipoTelefone, idSeguradora, idAutorizada, idCliente));
             }
         } catch (SQLException e) {
-            throw new TelefoneDaoException("Erro ao buscar dados na T_CON_TELEFONE", e);
+            throw new TelefoneDaoException("Erro ao buscar dados na T_CON_TELEFONE");
         }
 
         return result;
@@ -90,7 +90,7 @@ public class TelefoneDaoImpl implements TelefoneDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new TelefoneDaoException("Erro ao atualizar dados na T_CON_TELEFONE", e);
+            throw new TelefoneDaoException("Erro ao atualizar dados na T_CON_TELEFONE");
         }
     }
 
@@ -105,7 +105,7 @@ public class TelefoneDaoImpl implements TelefoneDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new TelefoneDaoException("Erro ao excluir dados da T_CON_TELEFONE", e);
+            throw new TelefoneDaoException("Erro ao excluir dados da T_CON_TELEFONE");
         }
     }
 }

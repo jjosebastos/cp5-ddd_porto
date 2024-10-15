@@ -1,6 +1,5 @@
 package org.motins.service;
 
-import org.motins.entity.Tecnico;
 import org.motins.entity.Telefone;
 import org.motins.service.interfaces.ITelefoneService;
 
@@ -23,7 +22,7 @@ public class TelefoneService implements ITelefoneService {
     }
 
     @Override
-    public List<Tecnico> findAll() {
+    public List<Telefone> findAll() {
         return List.of();
     }
 

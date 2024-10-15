@@ -1,6 +1,6 @@
 package org.motins.dao;
 
-import entity.Tecnico;
+import org.motins.entity.Tecnico;
 import org.motins.exception.TecnicoDaoException;
 
 import java.sql.SQLException;

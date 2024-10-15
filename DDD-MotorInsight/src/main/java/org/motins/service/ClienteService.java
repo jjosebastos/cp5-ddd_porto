@@ -1,6 +1,6 @@
 package org.motins.service;
 
-import org.motins.entity.pessoa.Cliente;
+import org.motins.entity.Cliente;
 import org.motins.service.interfaces.IClienteService;
 
 import java.util.List;

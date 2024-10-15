@@ -1,8 +1,8 @@
 package org.motins.dao;
 
-import config.DatabaseConfig;
-import entity.Seguradora;
-import exception.SeguradoraDaoException;
+import org.motins.config.DatabaseConfig;
+import org.motins.entity.Seguradora;
+import org.motins.exception.SeguradoraDaoException;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ public class SeguradoraDaoImpl implements SeguradoraDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new SeguradoraDaoException("Erro ao inserir dados na T_CON_SEGURADORA", e);
+            throw new SeguradoraDaoException("Erro ao inserir dados na T_CON_SEGURADORA");
         }
     }
 
@@ -59,7 +59,7 @@ public class SeguradoraDaoImpl implements SeguradoraDao {
                 result.add(new Seguradora(idSeguradora, nome, cnpj, idVeiculo));
             }
         } catch (SQLException e) {
-            throw new SeguradoraDaoException("Erro ao consultar dados na T_CON_SEGURADORA", e);
+            throw new SeguradoraDaoException("Erro ao consultar dados na T_CON_SEGURADORA");
         }
 
         return result;
@@ -79,7 +79,7 @@ public class SeguradoraDaoImpl implements SeguradoraDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new SeguradoraDaoException("Erro ao atualizar dados na T_CON_SEGURADORA", e);
+            throw new SeguradoraDaoException("Erro ao atualizar dados na T_CON_SEGURADORA");
         }
     }
 
@@ -94,7 +94,7 @@ public class SeguradoraDaoImpl implements SeguradoraDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new SeguradoraDaoException("Erro ao excluir dados da T_CON_SEGURADORA", e);
+            throw new SeguradoraDaoException("Erro ao excluir dados da T_CON_SEGURADORA");
         }
     }
 }

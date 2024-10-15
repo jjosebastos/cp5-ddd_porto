@@ -10,13 +10,13 @@ public class Endereco {
     private String uf;
     private String cep;
     private String complemento;
-    private String idCliente;
-    private String idAutorizada;
-    private String idSeguradora;
+    private int idCliente;
+    private int idAutorizada;
+    private int idSeguradora;
 
     public Endereco(){}
     public Endereco(int idEndereco, String rua, String numeroEndereco ,String bairro, String cidade, String uf,
-                    String cep, String complemento, String idCliente, String idAutorizada, String idSeguradora) {
+                    String cep, String complemento, int idCliente, int idAutorizada, int idSeguradora) {
         this.idEndereco = idEndereco;
         this.rua = rua;
         this.numeroEndereco = numeroEndereco;
@@ -100,30 +100,30 @@ public class Endereco {
         this.complemento = complemento;
     }
 
-    public String getIdCliente() {
+
+    public int getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(String idCliente) {
+    public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
 
-    public String getIdAutorizada() {
+    public int getIdAutorizada() {
         return idAutorizada;
     }
 
-    public void setIdAutorizada(String idAutorizada) {
+    public void setIdAutorizada(int idAutorizada) {
         this.idAutorizada = idAutorizada;
     }
 
-    public String getIdSeguradora() {
+    public int getIdSeguradora() {
         return idSeguradora;
     }
 
-    public void setIdSeguradora(String idSeguradora) {
+    public void setIdSeguradora(int idSeguradora) {
         this.idSeguradora = idSeguradora;
     }
-
 
     @Override
     public String toString() {

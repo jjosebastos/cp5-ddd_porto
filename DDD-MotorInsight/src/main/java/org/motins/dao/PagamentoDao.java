@@ -1,7 +1,7 @@
 package org.motins.dao;
 
 
-import entity.Pagamento;
+import org.motins.entity.Pagamento;
 import org.motins.exception.PagamentoDaoException;
 
 import java.sql.SQLException;

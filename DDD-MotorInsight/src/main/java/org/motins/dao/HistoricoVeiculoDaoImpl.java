@@ -1,7 +1,7 @@
 package org.motins.dao;
 
-import config.DatabaseConfig;
-import entity.HistoricoVeiculo;
+import org.motins.config.DatabaseConfig;
+import org.motins.entity.HistoricoVeiculo;
 import org.motins.exception.HistoricoVeiculoDaoException;
 
 import java.sql.*;
@@ -31,7 +31,7 @@ public class HistoricoVeiculoDaoImpl implements HistoricoVeiculoDao {
             pstmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            throw new HistoricoVeiculoDaoException("Erro ao inserir o histórico do veículo", e);
+            throw new HistoricoVeiculoDaoException("Erro ao inserir o histórico do veículo");
         }
     }
 
@@ -54,7 +54,7 @@ public class HistoricoVeiculoDaoImpl implements HistoricoVeiculoDao {
                 result.add(new HistoricoVeiculo(idHistorico, dataAquisicao, dataVenda, idCliente, idVeiculo));
             }
         } catch (SQLException e) {
-            throw new HistoricoVeiculoDaoException("Erro ao ler os históricos de veículos", e);
+            throw new HistoricoVeiculoDaoException("Erro ao ler os históricos de veículos");
         }
 
         return result;
@@ -73,7 +73,7 @@ public class HistoricoVeiculoDaoImpl implements HistoricoVeiculoDao {
             pstmt.setInt(5, historicoVeiculo.getIdHistorico());
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            throw new HistoricoVeiculoDaoException("Erro ao atualizar o histórico do veículo", e);
+            throw new HistoricoVeiculoDaoException("Erro ao atualizar o histórico do veículo");
         }
     }
 
@@ -87,7 +87,7 @@ public class HistoricoVeiculoDaoImpl implements HistoricoVeiculoDao {
             pstmt.setInt(1, id);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            throw new HistoricoVeiculoDaoException("Erro ao excluir o histórico do veículo", e);
+            throw new HistoricoVeiculoDaoException("Erro ao excluir o histórico do veículo");
         }
     }
 }
