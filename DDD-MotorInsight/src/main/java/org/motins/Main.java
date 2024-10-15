@@ -1,29 +1,31 @@
 package org.motins;
 
 import org.motins.config.DatabaseConfig;
-import org.motins.dao.AutorizadaDaoImpl;
-import org.motins.dao.PessoaJuridicaDao;
-import org.motins.dao.PessoaJuridicaDaoImpl;
-import org.motins.entity.Autorizada;
-import org.motins.entity.Cliente;
-import org.motins.entity.PessoaJuridica;
-import org.motins.exception.AutorizadaDaoException;
-import org.motins.exception.PessoaJuridicaDaoException;
+import org.motins.dao.*;
+import org.motins.entity.*;
+import org.motins.exception.*;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws AutorizadaDaoException, PessoaJuridicaDaoException {
+    public static void main(String[] args) throws AutorizadaDaoException, PessoaJuridicaDaoException, VeiculoDaoException, TelefoneDaoException, SeguradoraDaoException {
 
         DatabaseConfig db = new DatabaseConfig("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL",
                 "rm559221","jn100800");
 
-        PessoaJuridicaDao pessoaJuridica = PessoaJuridicaDaoImpl.getInstance(db);
+        PessoaJuridicaDao pjDao = PessoaJuridicaDaoImpl.getInstance(db);
 
-        PessoaJuridica pj = new PessoaJuridica(1, "PJ" , "ativo", "05.054.045/0001-95", "CARFIX", "CARFIX LTDA", "");
+        PessoaJuridica pj = new PessoaJuridica(4, "PJ", "1", "04.045.304/0001-94", "CARFIX TESTE", "CARFIX TESTE LTDA", "10039");
+        pjDao.create(pj);
 
-
-        pessoaJuridica.create(pj);
-
+        List<PessoaJuridica> result = pjDao.readAll();
+        for (PessoaJuridica pes: result) {
+            System.out.println(pes.toString());
+        }
 
 
     }
+
 }

@@ -12,7 +12,7 @@ public interface TelefoneDao {
     void create(Telefone telefone) throws TelefoneDaoException;
 
     //TODO: READ
-    List<Telefone> readAll() throws SQLException, TelefoneDaoException;
+    List<Telefone> readAll() throws  TelefoneDaoException;
 
     //TODO: UPDATE
     void update(Telefone telefone) throws TelefoneDaoException;

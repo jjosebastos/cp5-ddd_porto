@@ -7,6 +7,7 @@ public class Cliente {
     private String statusCliente;
 
     public Cliente(int idCliente, String tipoCliente, String statusCliente) {
+        super();
         this.idCliente = idCliente;
         setTipoCliente(tipoCliente);
         this.statusCliente = statusCliente;

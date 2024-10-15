@@ -16,7 +16,7 @@ public class Seguradora {
     }
 
     public boolean isCnpjValido(String cnpj){
-        if(cnpj.length() == 14){
+        if(cnpj.length() == 18){
             return true;
         } else {
             throw new RuntimeException("CNPJ inválido.");

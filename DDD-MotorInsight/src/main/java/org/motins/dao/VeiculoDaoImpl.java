@@ -14,7 +14,7 @@ public class VeiculoDaoImpl implements VeiculoDao {
     private final DatabaseConfig db;
 
     // Construtor privado para evitar múltiplas instâncias
-    private VeiculoDaoImpl(DatabaseConfig db) {
+    public VeiculoDaoImpl(DatabaseConfig db) {
         this.db = db;
     }
 
@@ -30,9 +30,9 @@ public class VeiculoDaoImpl implements VeiculoDao {
     public void create(Veiculo veiculo) throws VeiculoDaoException {
         String sql = "INSERT INTO T_CON_VEICULO (ID_VEICULO, NR_PLACA, DS_MARCA, NM_MODELO, NR_CHASSI, ID_CLIENTE) VALUES (?, ?, ?, ?, ?, ?)";
 
-        try (Connection connection = db.getConnection();
-             PreparedStatement pstmt = connection.prepareStatement(sql)) {
-
+        try {
+            Connection connection = db.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(sql);
             connection.setAutoCommit(false);
             pstmt.setInt(1, veiculo.getIdVeiculo());
             pstmt.setString(2, veiculo.getPlaca());
@@ -43,6 +43,7 @@ public class VeiculoDaoImpl implements VeiculoDao {
 
             pstmt.executeUpdate();
             connection.commit();
+            connection.close();
 
         } catch (SQLException e) {
             throw new VeiculoDaoException("Erro ao inserir dados na T_CON_VEICULO: " + e.getMessage());
@@ -101,7 +102,7 @@ public class VeiculoDaoImpl implements VeiculoDao {
 
     @Override
     public void delete(int id) throws VeiculoDaoException {
-        String sql = "DELETE FROM T_CON_VEICULO WHERE ID_VEICULO = ? CASCADE";
+        String sql = "DELETE FROM T_CON_VEICULO WHERE ID_VEICULO = ?";
 
         try (Connection connection = db.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {

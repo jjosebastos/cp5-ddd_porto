@@ -25,35 +25,34 @@ public class PessoaJuridicaDaoImpl implements PessoaJuridicaDao {
         return instance;
     }
 
-    @Override
     public void create(PessoaJuridica pessoaJuridica) throws PessoaJuridicaDaoException {
         String sqlCliente = "INSERT INTO T_CON_CLIENTE (id_cliente, tp_cliente, st_cliente) VALUES (?, ?, ?)";
         String sqlPessoaJuridica = "INSERT INTO T_CON_PESSOA_JURIDICA (id_cliente, nr_cnpj, nm_razao_social, nm_fantasia) VALUES (?, ?, ?, ?)";
 
-        try (Connection connection = db.getConnection()) {
-            connection.setAutoCommit(false);  // Início da transação
+        try {
+            Connection connection = db.getConnection();
 
-            // Inserindo dados na tabela T_CON_CLIENTE
-            try (PreparedStatement pstmtCliente = connection.prepareStatement(sqlCliente)) {
-                pstmtCliente.setInt(1, pessoaJuridica.getIdCliente());
-                pstmtCliente.setString(2, "PJ"); // Definindo o tipo como 'PJ'
-                pstmtCliente.setString(3, pessoaJuridica.getStatusCliente());
-                pstmtCliente.executeUpdate();
-            }
+             PreparedStatement pstmtCliente = connection.prepareStatement(sqlCliente);
+             PreparedStatement pstmtPessoaJuridica = connection.prepareStatement(sqlPessoaJuridica);
 
-            // Inserindo dados na tabela T_CON_PESSOA_JURIDICA
-            try (PreparedStatement pstmtPessoaJuridica = connection.prepareStatement(sqlPessoaJuridica)) {
-                pstmtPessoaJuridica.setInt(1, pessoaJuridica.getIdCliente());
-                pstmtPessoaJuridica.setString(2, pessoaJuridica.getCnpj());
-                pstmtPessoaJuridica.setString(3, pessoaJuridica.getRazaoSocial());
-                pstmtPessoaJuridica.setString(4, pessoaJuridica.getNomeFantasia());
-                pstmtPessoaJuridica.executeUpdate();
-            }
+            connection.setAutoCommit(false);
 
-            connection.commit();  // Finaliza a transação
+            // 1. Inserindo na tabela mãe (T_CON_CLIENTE)
+            pstmtCliente.setInt(1, pessoaJuridica.getIdCliente());
+            pstmtCliente.setString(2, pessoaJuridica.getTipoCliente());
+            pstmtCliente.setString(3, pessoaJuridica.getStatusCliente());
+            pstmtCliente.executeUpdate();
 
+            // 2. Inserindo na tabela filha (T_CON_PESSOA_JURIDICA)
+            pstmtPessoaJuridica.setInt(1, pessoaJuridica.getIdCliente()); // Chave estrangeira
+            pstmtPessoaJuridica.setString(2, pessoaJuridica.getCnpj());
+            pstmtPessoaJuridica.setString(3, pessoaJuridica.getRazaoSocial());
+            pstmtPessoaJuridica.setString(4, pessoaJuridica.getNomeFantasia());
+            pstmtPessoaJuridica.executeUpdate();
+
+            connection.commit();
         } catch (SQLException e) {
-            throw new PessoaJuridicaDaoException("Erro ao criar a pessoa jurídica: " + e.getMessage(), e);
+            throw new PessoaJuridicaDaoException("Erro ao inserir Pessoa Jurídica: " + e.getMessage());
         }
     }
 

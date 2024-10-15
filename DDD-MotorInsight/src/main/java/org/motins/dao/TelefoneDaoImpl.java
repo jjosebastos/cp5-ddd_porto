@@ -12,7 +12,7 @@ public class TelefoneDaoImpl implements TelefoneDao {
     private static TelefoneDaoImpl instance;
     private final DatabaseConfig db;
 
-    private TelefoneDaoImpl(DatabaseConfig db) {
+    public TelefoneDaoImpl(DatabaseConfig db) {
         this.db = db;
     }
 

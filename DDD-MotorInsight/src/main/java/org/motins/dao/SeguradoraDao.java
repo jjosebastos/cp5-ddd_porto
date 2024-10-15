@@ -13,7 +13,7 @@ public interface SeguradoraDao {
     void create(Seguradora seguradora) throws SeguradoraDaoException;
 
     //TODO: READ
-    List<Seguradora> readAll() throws SQLException, SeguradoraDaoException;
+    List<Seguradora> readAll() throws SeguradoraDaoException;
 
     //TODO: UPDATE
     void update(Seguradora Seguradora) throws SeguradoraDaoException;
