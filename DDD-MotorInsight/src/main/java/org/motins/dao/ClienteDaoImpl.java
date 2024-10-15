@@ -4,7 +4,6 @@ import org.motins.config.DatabaseConfig;
 import org.motins.entity.Cliente;
 import org.motins.exception.ClienteDaoException;
 
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +33,7 @@ public class ClienteDaoImpl implements ClienteDao {
             pstmt.setString(3, cliente.getStatusCliente());
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            throw new ClienteDaoException("Erro ao criar o cliente: " + e.getMessage(), e);
+            throw new ClienteDaoException("Erro ao criar o cliente: " + e.getMessage());
         }
     }
 
@@ -48,7 +47,11 @@ public class ClienteDaoImpl implements ClienteDao {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                clientes.add(new Cliente(rs.getInt("id_cliente"), rs.getString("tp_cliente"), rs.getString("st_cliente")));
+                String tipoCliente = rs.getString("tp_cliente");
+                Cliente cliente;
+                cliente = new Cliente(rs.getInt("id_cliente"), tipoCliente, rs.getString("st_cliente"));
+
+                clientes.add(cliente);
             }
         } catch (SQLException e) {
             throw new ClienteDaoException("Erro ao ler os clientes: " + e.getMessage());

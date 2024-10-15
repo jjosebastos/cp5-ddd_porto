@@ -17,5 +17,5 @@ public interface HistoricoVeiculoDao {
     void update(HistoricoVeiculo historicoVeiculo) throws HistoricoVeiculoDaoException;
 
     //TODO: DELETE
-    void delete(int id) throws HistoricoVeiculoDaoException;
+    void delete(int idHistorico) throws HistoricoVeiculoDaoException;
 }

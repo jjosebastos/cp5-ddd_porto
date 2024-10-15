@@ -12,7 +12,7 @@ public interface PagamentoDao {
     void create(Pagamento pagamento) throws PagamentoDaoException;
 
     //TODO: READ
-    List<Pagamento> readAll() throws SQLException, PagamentoDaoException;
+    List<Pagamento> readAll() throws PagamentoDaoException;
 
     //TODO: UPDATE
     void update(Pagamento pagamento) throws PagamentoDaoException;
