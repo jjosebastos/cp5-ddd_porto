@@ -15,7 +15,7 @@ public class PagamentoServiceImpl implements IPagamentoService {
     DatabaseConfig db = new DatabaseConfig("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL",
             "rm559221","jn100800");
 
-    PagamentoDao pagamentoDao = PagamentoDaoImpl.getInstance(db);
+    public PagamentoDao pagamentoDao = PagamentoDaoImpl.getInstance(db);
     private PagamentoServiceImpl() {}
 
     public static PagamentoServiceImpl getInstance() {

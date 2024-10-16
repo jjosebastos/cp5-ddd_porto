@@ -17,7 +17,7 @@ public class ClienteService implements IClienteService {
             "rm559221","jn100800");
     ClienteDao clienteDao = ClienteDaoImpl.getInstance(db);
 
-    private ClienteService(){
+    ClienteService(){
 
     }
 
