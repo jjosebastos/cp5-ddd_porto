@@ -1,11 +1,9 @@
 package org.motins.service;
 
 import org.motins.config.DatabaseConfig;
-import org.motins.dao.PessoaFisicaDao;
-import org.motins.dao.PessoaFisicaDaoImpl;
 import org.motins.dao.PessoaJuridicaDao;
 import org.motins.dao.PessoaJuridicaDaoImpl;
-import org.motins.entity.PessoaJuridica;
+import org.motins.entity.factoryCliente.PessoaJuridica;
 import org.motins.exception.service.PessoaJuridicaServiceException;
 import org.motins.service.interfaces.IPessoaJuridicaService;
 

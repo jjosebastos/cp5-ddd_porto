@@ -3,8 +3,7 @@ package org.motins.service;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.ClienteDao;
 import org.motins.dao.ClienteDaoImpl;
-import org.motins.entity.Cliente;
-import org.motins.exception.dao.ClienteDaoException;
+import org.motins.entity.factoryCliente.Cliente;
 import org.motins.exception.service.ClienteServiceException;
 import org.motins.service.interfaces.IClienteService;
 

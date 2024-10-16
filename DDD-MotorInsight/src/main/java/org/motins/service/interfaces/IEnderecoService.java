@@ -1,11 +1,8 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.Endereco;
-import org.motins.exception.dao.EnderecoDaoException;
+import org.motins.entity.factoryEndereco.Endereco;
 import org.motins.exception.service.EnderecoServiceException;
-import org.motins.service.EnderecoService;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface IEnderecoService {

@@ -6,10 +6,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.motins.dao.ClienteDao;
-import org.motins.entity.Cliente;
+import org.motins.entity.factoryCliente.Cliente;
 import org.motins.exception.dao.ClienteDaoException;
 import org.motins.exception.service.ClienteServiceException;
-import org.motins.service.ClienteService;
 
 import java.util.ArrayList;
 import java.util.List;

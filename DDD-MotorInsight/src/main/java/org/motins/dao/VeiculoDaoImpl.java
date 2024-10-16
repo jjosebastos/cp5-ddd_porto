@@ -2,7 +2,7 @@ package org.motins.dao;
 
 
 import org.motins.config.DatabaseConfig;
-import org.motins.entity.Veiculo;
+import org.motins.entity.factoryVeiculo.Veiculo;
 import org.motins.exception.dao.VeiculoDaoException;
 
 import java.sql.*;

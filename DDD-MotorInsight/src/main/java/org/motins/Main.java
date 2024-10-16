@@ -1,11 +1,11 @@
 package org.motins;
 
 import org.motins.config.DatabaseConfig;
-import org.motins.dao.*;
-import org.motins.entity.*;
+import org.motins.entity.factoryAutorizada.Autorizada;
 import org.motins.exception.dao.*;
-
-import java.util.List;
+import org.motins.exception.service.AutorizadaServiceException;
+import org.motins.service.AutorizadaServiceImpl;
+import org.motins.service.interfaces.IAutorizadaService;
 
 public class Main {
     public static void main(String[] args) throws AutorizadaDaoException, PessoaJuridicaDaoException, VeiculoDaoException, TelefoneDaoException, SeguradoraDaoException {
@@ -13,17 +13,18 @@ public class Main {
         DatabaseConfig db = new DatabaseConfig("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL",
                 "rm559221","jn100800");
 
-        PessoaJuridicaDao pjDao = PessoaJuridicaDaoImpl.getInstance(db);
+        IAutorizadaService autorizadaService = AutorizadaServiceImpl.getInstance();
+        Autorizada autorizada = new Autorizada(3, "PORTO SEGURO SP", "04.599.093/0001-91");
 
-        PessoaJuridica pj = new PessoaJuridica(4, "PJ", "1", "04.045.304/0001-94", "CARFIX TESTE", "CARFIX TESTE LTDA", "10039");
-        pjDao.create(pj);
-
-        List<PessoaJuridica> result = pjDao.readAll();
-        for (PessoaJuridica pes: result) {
-            System.out.println(pes.toString());
+        try {
+            autorizadaService.create(autorizada);
+        } catch (AutorizadaServiceException e) {
+            throw new RuntimeException(e);
         }
-
 
     }
 
+
 }
+
+

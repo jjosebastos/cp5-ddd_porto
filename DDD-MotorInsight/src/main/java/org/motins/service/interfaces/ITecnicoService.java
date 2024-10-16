@@ -1,8 +1,7 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.Tecnico;
+import org.motins.entity.factoryAutorizada.Tecnico;
 import org.motins.exception.service.TecnicoServiceException;
-import org.motins.service.TecnicoService;
 
 import java.util.List;
 

@@ -1,11 +1,9 @@
 package org.motins.service;
 
 import org.motins.config.DatabaseConfig;
-import org.motins.dao.TecnicoDao;
-import org.motins.dao.TecnicoDaoImpl;
 import org.motins.dao.TelefoneDao;
 import org.motins.dao.TelefoneDaoImpl;
-import org.motins.entity.Telefone;
+import org.motins.entity.factoryTelefone.Telefone;
 import org.motins.exception.service.TelefoneServiceException;
 import org.motins.service.interfaces.ITelefoneService;
 

@@ -1,6 +1,6 @@
 package org.motins.dao;
 
-import org.motins.entity.Cliente;
+import org.motins.entity.factoryCliente.Cliente;
 import org.motins.exception.dao.ClienteDaoException;
 import java.util.List;
 

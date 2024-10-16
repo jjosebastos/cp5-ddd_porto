@@ -2,7 +2,7 @@ package org.motins.service;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.*;
-import org.motins.entity.Tecnico;
+import org.motins.entity.factoryAutorizada.Tecnico;
 import org.motins.exception.service.TecnicoServiceException;
 import org.motins.service.interfaces.ITecnicoService;
 

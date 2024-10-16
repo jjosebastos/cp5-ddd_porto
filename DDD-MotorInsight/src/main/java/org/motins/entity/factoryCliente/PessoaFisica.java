@@ -1,4 +1,4 @@
-package org.motins.entity;
+package org.motins.entity.factoryCliente;
 
 import java.time.LocalDate;
 import java.time.Period;

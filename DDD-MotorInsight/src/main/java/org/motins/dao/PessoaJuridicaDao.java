@@ -1,6 +1,6 @@
 package org.motins.dao;
 
-import org.motins.entity.PessoaJuridica;
+import org.motins.entity.factoryCliente.PessoaJuridica;
 import org.motins.exception.dao.PessoaJuridicaDaoException;
 
 import java.util.List;

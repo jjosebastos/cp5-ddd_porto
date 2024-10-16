@@ -4,9 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.PagamentoDao;
-import org.motins.entity.Pagamento;
+import org.motins.entity.factoryPagamento.Pagamento;
 import org.motins.exception.service.PagamentoServiceException;
-import org.motins.service.PagamentoServiceImpl;
 
 import java.time.LocalDate;
 import java.util.List;

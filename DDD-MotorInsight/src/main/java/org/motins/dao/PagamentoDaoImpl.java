@@ -1,7 +1,7 @@
 package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
-import org.motins.entity.Pagamento;
+import org.motins.entity.factoryPagamento.Pagamento;
 import org.motins.exception.dao.PagamentoDaoException;
 
 import java.sql.*;

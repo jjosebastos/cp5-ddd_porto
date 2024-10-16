@@ -6,7 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.motins.dao.HistoricoVeiculoDao;
-import org.motins.entity.HistoricoVeiculo;
+import org.motins.entity.factoryVeiculo.HistoricoVeiculo;
 import org.motins.exception.service.HistoricoVeiculoServiceException;
 import java.time.LocalDate;
 import java.util.Arrays;

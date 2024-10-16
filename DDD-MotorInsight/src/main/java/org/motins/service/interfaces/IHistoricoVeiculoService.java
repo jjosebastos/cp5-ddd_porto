@@ -1,6 +1,6 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.HistoricoVeiculo;
+import org.motins.entity.factoryVeiculo.HistoricoVeiculo;
 import org.motins.exception.service.HistoricoVeiculoServiceException;
 
 import java.util.List;

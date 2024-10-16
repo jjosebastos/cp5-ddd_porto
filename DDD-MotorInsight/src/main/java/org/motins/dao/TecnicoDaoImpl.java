@@ -1,7 +1,7 @@
 package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
-import org.motins.entity.Tecnico;
+import org.motins.entity.factoryAutorizada.Tecnico;
 import org.motins.exception.dao.TecnicoDaoException;
 
 import java.sql.*;

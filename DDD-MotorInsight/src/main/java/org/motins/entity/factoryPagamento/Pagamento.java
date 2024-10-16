@@ -1,4 +1,4 @@
-package org.motins.entity;
+package org.motins.entity.factoryPagamento;
 
 import java.time.LocalDate;
 import java.util.Objects;

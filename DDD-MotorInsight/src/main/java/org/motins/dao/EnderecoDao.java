@@ -1,6 +1,6 @@
 package org.motins.dao;
 
-import org.motins.entity.Endereco;
+import org.motins.entity.factoryEndereco.Endereco;
 import org.motins.exception.dao.EnderecoDaoException;
 import java.sql.SQLException;
 import java.util.List;

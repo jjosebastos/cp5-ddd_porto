@@ -1,6 +1,6 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.Reparo;
+import org.motins.entity.factoryAutorizada.Reparo;
 import org.motins.exception.service.ReparoServiceException;
 
 import java.util.List;

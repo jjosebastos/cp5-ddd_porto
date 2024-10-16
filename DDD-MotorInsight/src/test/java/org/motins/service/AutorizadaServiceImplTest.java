@@ -5,9 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.motins.config.DatabaseConfig;
 import org.motins.dao.AutorizadaDao;
-import org.motins.entity.Autorizada;
+import org.motins.entity.factoryAutorizada.Autorizada;
 import org.motins.exception.dao.AutorizadaDaoException;
 import org.motins.exception.service.AutorizadaServiceException;
 

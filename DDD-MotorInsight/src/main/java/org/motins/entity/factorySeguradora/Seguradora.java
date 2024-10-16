@@ -1,4 +1,4 @@
-package org.motins.entity;
+package org.motins.entity.factorySeguradora;
 
 import java.util.Objects;
 

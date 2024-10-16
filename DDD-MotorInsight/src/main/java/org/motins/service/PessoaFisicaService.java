@@ -1,11 +1,10 @@
 package org.motins.service;
 
 import org.motins.config.DatabaseConfig;
-import org.motins.dao.PagamentoDaoImpl;
 import org.motins.dao.PessoaFisicaDao;
 import org.motins.dao.PessoaFisicaDaoImpl;
 
-import org.motins.entity.PessoaFisica;
+import org.motins.entity.factoryCliente.PessoaFisica;
 import org.motins.exception.service.PessoaFisicaServiceException;
 import org.motins.service.interfaces.IPessoaFisicaService;
 

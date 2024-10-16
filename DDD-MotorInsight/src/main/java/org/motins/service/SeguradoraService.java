@@ -3,7 +3,7 @@ package org.motins.service;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.SeguradoraDao;
 import org.motins.dao.SeguradoraDaoImpl;
-import org.motins.entity.Seguradora;
+import org.motins.entity.factorySeguradora.Seguradora;
 import org.motins.exception.service.SeguradoraServiceException;
 import org.motins.service.interfaces.ISeguradoraService;
 

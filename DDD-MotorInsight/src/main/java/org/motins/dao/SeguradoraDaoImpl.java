@@ -1,7 +1,7 @@
 package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
-import org.motins.entity.Seguradora;
+import org.motins.entity.factorySeguradora.Seguradora;
 import org.motins.exception.dao.SeguradoraDaoException;
 
 import java.sql.*;

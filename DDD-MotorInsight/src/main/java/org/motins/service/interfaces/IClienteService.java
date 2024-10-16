@@ -1,6 +1,6 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.Cliente;
+import org.motins.entity.factoryCliente.Cliente;
 import org.motins.exception.service.ClienteServiceException;
 
 import java.util.List;

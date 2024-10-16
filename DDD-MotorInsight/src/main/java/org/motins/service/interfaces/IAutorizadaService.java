@@ -1,7 +1,6 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.Autorizada;
-import org.motins.entity.Cliente;
+import org.motins.entity.factoryAutorizada.Autorizada;
 import org.motins.exception.service.AutorizadaServiceException;
 
 import java.util.List;

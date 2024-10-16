@@ -3,7 +3,7 @@ package org.motins.dao;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.motins.config.DatabaseConfig;
-import org.motins.entity.Autorizada;
+import org.motins.entity.factoryAutorizada.Autorizada;
 import org.motins.exception.dao.AutorizadaDaoException;
 
 class AutorizadaDaoImplTest {

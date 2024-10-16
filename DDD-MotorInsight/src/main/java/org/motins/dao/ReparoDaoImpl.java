@@ -1,7 +1,7 @@
 package org.motins.dao;
 
 import org.motins.config.DatabaseConfig;
-import org.motins.entity.Reparo;
+import org.motins.entity.factoryAutorizada.Reparo;
 import org.motins.exception.dao.ReparoDaoException;
 
 import java.sql.*;

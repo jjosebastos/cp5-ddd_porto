@@ -1,6 +1,6 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.PessoaFisica;
+import org.motins.entity.factoryCliente.PessoaFisica;
 import org.motins.exception.service.PessoaFisicaServiceException;
 
 import java.util.List;

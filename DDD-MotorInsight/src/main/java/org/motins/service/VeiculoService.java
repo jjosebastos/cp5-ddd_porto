@@ -3,8 +3,7 @@ package org.motins.service;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.VeiculoDao;
 import org.motins.dao.VeiculoDaoImpl;
-import org.motins.entity.Veiculo;
-import org.motins.exception.service.TelefoneServiceException;
+import org.motins.entity.factoryVeiculo.Veiculo;
 import org.motins.exception.service.VeiculoServiceException;
 import org.motins.service.interfaces.IVeiculoService;
 

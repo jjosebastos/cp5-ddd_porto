@@ -3,7 +3,7 @@ package org.motins.service;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.HistoricoVeiculoDao;
 import org.motins.dao.HistoricoVeiculoDaoImpl;
-import org.motins.entity.HistoricoVeiculo;
+import org.motins.entity.factoryVeiculo.HistoricoVeiculo;
 import org.motins.exception.service.HistoricoVeiculoServiceException;
 import org.motins.service.interfaces.IHistoricoVeiculoService;
 

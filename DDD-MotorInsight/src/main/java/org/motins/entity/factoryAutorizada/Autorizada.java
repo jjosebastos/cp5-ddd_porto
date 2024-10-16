@@ -1,11 +1,11 @@
-package org.motins.entity;
+package org.motins.entity.factoryAutorizada;
 
 public class Autorizada {
     private int idAutorizada;
     private String nome;
     private String cnpj;
 
-    public Autorizada(int idAutorizada, String nome, String cnpj) {
+    public Autorizada(int idAutorizada, String nome, String cnpj){
         this.idAutorizada = idAutorizada;
         this.nome = nome;
         this.cnpj = cnpj;

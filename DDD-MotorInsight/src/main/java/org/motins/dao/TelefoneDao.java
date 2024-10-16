@@ -1,6 +1,6 @@
 package org.motins.dao;
 
-import org.motins.entity.Telefone;
+import org.motins.entity.factoryTelefone.Telefone;
 import org.motins.exception.dao.TelefoneDaoException;
 
 import java.util.List;

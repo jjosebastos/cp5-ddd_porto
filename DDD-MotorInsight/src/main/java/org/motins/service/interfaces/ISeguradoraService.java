@@ -1,6 +1,6 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.Seguradora;
+import org.motins.entity.factorySeguradora.Seguradora;
 import org.motins.exception.service.SeguradoraServiceException;
 
 import java.util.List;

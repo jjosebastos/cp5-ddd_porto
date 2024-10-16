@@ -3,9 +3,8 @@ package org.motins.service;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.EnderecoDao;
 import org.motins.dao.EnderecoDaoImpl;
-import org.motins.entity.Endereco;
+import org.motins.entity.factoryEndereco.Endereco;
 import org.motins.exception.dao.EnderecoDaoException;
-import org.motins.exception.service.ClienteServiceException;
 import org.motins.exception.service.EnderecoServiceException;
 import org.motins.service.interfaces.IEnderecoService;
 
