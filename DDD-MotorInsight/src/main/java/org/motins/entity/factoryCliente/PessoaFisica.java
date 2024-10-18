@@ -1,15 +1,22 @@
-package org.motins.entity.factoryCliente;
+package org.motins.entity;
+
+import org.motins.entity.factoryCliente.Cliente;
+import org.motins.entity.factoryCliente.ICliente;
 
 import java.time.LocalDate;
 import java.time.Period;
 
-public class PessoaFisica extends Cliente{
+public class PessoaFisica extends Cliente implements ICliente {
 
     private int idCliente;
     private String nome;
     private LocalDate dataNascimento;
     private String numeroCpf;
     private String genero;
+
+    public PessoaFisica() {
+        super();
+    }
 
     public PessoaFisica(int idCliente, String tipoCliente, String statusCliente, String nome, LocalDate dataNascimento, String numeroCpf, String genero) {
         super(idCliente, tipoCliente, statusCliente);
@@ -18,6 +25,7 @@ public class PessoaFisica extends Cliente{
         this.numeroCpf = numeroCpf;
         this.genero = genero;
     }
+
 
     @Override
     public int getIdCliente() {
@@ -83,4 +91,8 @@ public class PessoaFisica extends Cliente{
     }
 
 
+    @Override
+    public void build(String tipo) {
+
+    }
 }

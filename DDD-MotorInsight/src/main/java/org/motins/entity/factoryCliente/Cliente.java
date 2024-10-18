@@ -1,4 +1,4 @@
-package org.motins.entity.factoryCliente;
+package org.motins.entity;
 
 public class Cliente {
 
@@ -11,6 +11,9 @@ public class Cliente {
         this.idCliente = idCliente;
         setTipoCliente(tipoCliente);
         this.statusCliente = statusCliente;
+    }
+    public Cliente() {
+        super();
     }
 
     public int getIdCliente() {

@@ -1,6 +1,8 @@
-package org.motins.entity.factoryCliente;
+package org.motins.entity;
 
-public class PessoaJuridica extends Cliente{
+import org.motins.entity.factoryCliente.Cliente;
+
+public class PessoaJuridica extends Cliente {
 
     private String cnpj;
     private String razaoSocial;
@@ -13,6 +15,9 @@ public class PessoaJuridica extends Cliente{
         this.razaoSocial = razaoSocial;
         this.nomeFantasia = nomeFantasia;
         this.inscricaoEstadual = inscricaoEstadual;
+    }
+    public PessoaJuridica(){
+        super();
     }
 
     public boolean isCnpjValido(String cnpj){
