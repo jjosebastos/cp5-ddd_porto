@@ -23,6 +23,8 @@ public class Reparo {
         this.valorServico = valorServico;
         this.idTecnico = idTecnico;
     }
+    public Reparo(){
+    }
 
     public boolean isDataValida(LocalDate dataInicio, LocalDate dataFim){
         return dataInicio.isAfter(dataFim);

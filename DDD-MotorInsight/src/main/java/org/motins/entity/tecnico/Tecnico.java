@@ -18,6 +18,8 @@ public class Tecnico {
         this.matricula = matricula;
         this.idAutorizada = idAutorizada;
     }
+    public Tecnico(){
+    }
 
     public int getIdTecnico() {
         return idTecnico;

@@ -23,6 +23,8 @@ public class Pagamento {
         this.idAutorizada = idAutorizada;
         this.tipoPagamento = tipoPagamento;
     }
+    public Pagamento(){
+    }
 
     public int getIdPagamento() {
         return idPagamento;

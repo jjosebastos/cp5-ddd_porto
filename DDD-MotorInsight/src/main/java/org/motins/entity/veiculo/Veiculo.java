@@ -19,6 +19,8 @@ public class Veiculo {
         this.chassi = chassi;
         this.idCliente = idCliente;
     }
+    public Veiculo(){
+    }
 
     public boolean isChassiValido(String chassi){
         return chassi.length() == 17;

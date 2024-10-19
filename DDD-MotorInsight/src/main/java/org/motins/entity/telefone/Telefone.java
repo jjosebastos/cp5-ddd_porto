@@ -21,6 +21,8 @@ public class Telefone {
         this.idAutorizada = idAutorizada;
         this.idCliente = idCliente;
     }
+    public Telefone(){
+    }
 
     public int getIdTelefone() {
         return idTelefone;
