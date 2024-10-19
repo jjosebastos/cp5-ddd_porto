@@ -1,0 +1,99 @@
+package org.motins.dao.impl;
+
+import org.motins.config.DatabaseConfig;
+import org.motins.dao.interfaces.AutorizadaDao;
+import org.motins.entity.autorizada.Autorizada;
+import org.motins.exception.dao.AutorizadaDaoException;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class AutorizadaDaoImpl implements AutorizadaDao {
+    private static AutorizadaDaoImpl instance;
+    private final DatabaseConfig db;
+
+    private AutorizadaDaoImpl(DatabaseConfig db) {
+        this.db = db;
+    }
+
+    public static AutorizadaDaoImpl getInstance(DatabaseConfig db) {
+        if (instance == null) {
+            instance = new AutorizadaDaoImpl(db);
+        }
+        return instance;
+    }
+
+    @Override
+    public void create(Autorizada autorizada) throws AutorizadaDaoException {
+        String sql = "INSERT INTO T_CON_AUTORIZADA (ID_AUTORIZADA, NM_AUTORIZADA, NR_CNPJ) VALUES (?, ?, ?)";
+        try (Connection connection = db.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+
+            connection.setAutoCommit(false);
+            pstmt.setInt(1, autorizada.getIdAutorizada());
+            pstmt.setString(2, autorizada.getNome());
+            pstmt.setString(3, autorizada.getCnpj());
+            pstmt.executeUpdate();
+            connection.commit();
+
+        } catch (SQLException e) {
+            throw new AutorizadaDaoException("Erro ao inserir dados na T_CON_AUTORIZADA: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public List<Autorizada> readAll() throws AutorizadaDaoException {
+        List<Autorizada> result = new ArrayList<>();
+        String sql = "SELECT * FROM T_CON_AUTORIZADA";
+
+        try (Connection connection = db.getConnection();
+             Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                int idAutorizada = rs.getInt("ID_AUTORIZADA");
+                String nome = rs.getString("NM_AUTORIZADA");
+                String cnpj = rs.getString("NR_CNPJ");
+
+                result.add(new Autorizada(idAutorizada, nome, cnpj));
+            }
+        } catch (SQLException e) {
+            throw new AutorizadaDaoException("Erro ao listar em T_CON_AUTORIZADA: " + e.getMessage());
+        }
+
+        return result;
+    }
+
+    @Override
+    public void update(Autorizada autorizada) throws AutorizadaDaoException {
+        String sql = "UPDATE T_CON_AUTORIZADA SET NM_AUTORIZADA = ?, NR_CNPJ = ? WHERE ID_AUTORIZADA = ?";
+        try (Connection connection = db.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+
+            pstmt.setString(1, autorizada.getNome());
+            pstmt.setString(2, autorizada.getCnpj());
+            pstmt.setInt(3, autorizada.getIdAutorizada());
+            pstmt.executeUpdate();
+            connection.commit();
+        } catch (SQLException e) {
+            throw new AutorizadaDaoException("Erro ao atualizar dados na T_CON_AUTORIZADA: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void delete(int id) throws AutorizadaDaoException {
+        String sql = "DELETE FROM T_CON_AUTORIZADA WHERE ID_AUTORIZADA = ?";
+
+        try (Connection connection = db.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+            connection.commit();
+
+        } catch (SQLException e) {
+            throw new AutorizadaDaoException("Erro ao excluir dados da T_CON_AUTORIZADA: " + e.getMessage());
+        }
+    }
+}

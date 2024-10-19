@@ -5,10 +5,11 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.motins.dao.EnderecoDao;
-import org.motins.entity.factoryEndereco.Endereco;
+import org.motins.dao.interfaces.EnderecoDao;
+import org.motins.entity.endereco.Endereco;
 import org.motins.exception.dao.EnderecoDaoException;
 import org.motins.exception.service.EnderecoServiceException;
+import org.motins.service.impl.EnderecoService;
 
 import java.sql.SQLException;
 import java.util.Arrays;

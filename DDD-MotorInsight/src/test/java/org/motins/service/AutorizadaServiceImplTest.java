@@ -5,10 +5,11 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.motins.dao.AutorizadaDao;
-import org.motins.entity.factoryAutorizada.Autorizada;
+import org.motins.dao.interfaces.AutorizadaDao;
+import org.motins.entity.autorizada.Autorizada;
 import org.motins.exception.dao.AutorizadaDaoException;
 import org.motins.exception.service.AutorizadaServiceException;
+import org.motins.service.impl.AutorizadaServiceImpl;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

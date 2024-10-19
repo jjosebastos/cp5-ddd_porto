@@ -5,10 +5,11 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.motins.dao.ClienteDao;
-import org.motins.entity.factoryCliente.Cliente;
+import org.motins.dao.interfaces.ClienteDao;
+import org.motins.entity.cliente.Cliente;
 import org.motins.exception.dao.ClienteDaoException;
 import org.motins.exception.service.ClienteServiceException;
+import org.motins.service.impl.ClienteService;
 
 import java.util.ArrayList;
 import java.util.List;

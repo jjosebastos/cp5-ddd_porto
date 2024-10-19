@@ -1,4 +1,4 @@
-package org.motins.entity.factoryVeiculo;
+package org.motins.entity;
 
 import java.time.LocalDate;
 import java.util.Objects;

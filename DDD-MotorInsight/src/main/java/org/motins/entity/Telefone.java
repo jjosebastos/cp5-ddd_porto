@@ -1,4 +1,4 @@
-package org.motins.entity.factoryTelefone;
+package org.motins.entity;
 
 import java.util.Objects;
 

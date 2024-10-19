@@ -1,4 +1,4 @@
-package org.motins.entity.factoryAutorizada;
+package org.motins.entity;
 
 import java.time.LocalDate;
 import java.time.Period;

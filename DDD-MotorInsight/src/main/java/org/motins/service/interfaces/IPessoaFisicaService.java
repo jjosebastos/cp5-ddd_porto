@@ -1,12 +1,11 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.factoryCliente.PessoaFisica;
+import org.motins.entity.cliente.PessoaFisica;
 import org.motins.exception.service.PessoaFisicaServiceException;
 
 import java.util.List;
 
 public interface IPessoaFisicaService {
-    //TODO: CREATE
     void create(PessoaFisica pessoaFisica) throws PessoaFisicaServiceException;
     //TODO: READ
     List<PessoaFisica> listAll() throws PessoaFisicaServiceException;
