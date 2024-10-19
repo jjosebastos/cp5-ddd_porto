@@ -4,7 +4,6 @@ import org.motins.config.DatabaseConfig;
 import org.motins.dao.interfaces.ClienteDao;
 import org.motins.dao.impl.ClienteDaoImpl;
 import org.motins.entity.cliente.Cliente;
-import org.motins.entity.cliente.FactoryCliente;
 import org.motins.exception.service.ClienteServiceException;
 import org.motins.service.interfaces.IClienteService;
 
@@ -12,17 +11,16 @@ import java.util.List;
 
 public class ClienteService implements IClienteService {
 
-    private FactoryCliente factoryCliente;
     private static ClienteService instance;
     DatabaseConfig db = new DatabaseConfig("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL",
             "rm559221","jn100800");
     ClienteDao clienteDao = ClienteDaoImpl.getInstance(db);
 
-    ClienteService(){
+    private ClienteService(){
 
     }
 
-    private static ClienteService getInstance(){
+    public static ClienteService getInstance(){
         if(instance == null){
             instance = new ClienteService();
         }
@@ -33,7 +31,7 @@ public class ClienteService implements IClienteService {
     @Override
     public void create(Cliente cliente) throws ClienteServiceException {
         try {
-
+            clienteDao.create(cliente);
         }catch (Exception e){
             throw new ClienteServiceException("Não foi possivel criar em T_CON_CLIENTE", e);
         }

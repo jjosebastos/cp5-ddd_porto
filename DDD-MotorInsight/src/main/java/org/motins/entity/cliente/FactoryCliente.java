@@ -1,5 +1,8 @@
 package org.motins.entity.cliente;
 
-public abstract class FactoryCliente {
-    public abstract Cliente createCliente(String tipo);
+public class FactoryCliente{
+    private FactoryCliente(){}
+        public static Cliente create() {
+        return new Cliente();
+    }
 }

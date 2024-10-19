@@ -13,13 +13,12 @@ import java.util.List;
 
 public class PessoaFisicaService implements IPessoaFisicaService {
 
-    private static PessoaFisicaService instance;;
+    private static PessoaFisicaService instance;
         DatabaseConfig db = new DatabaseConfig("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL",
             "rm559221","jn100800");
-    PessoaFisicaDao pagamentoDao = PessoaFisicaDaoImpl.getInstance(db);
+    PessoaFisicaDao pessoaFisicaDao = PessoaFisicaDaoImpl.getInstance(db);
 
     private PessoaFisicaService() {}
-
 
     public static PessoaFisicaService getInstance() throws PessoaFisicaServiceException {
         if (instance == null) {
@@ -28,14 +27,10 @@ public class PessoaFisicaService implements IPessoaFisicaService {
         return instance;
     }
 
-
-
-
-
     @Override
     public void create(PessoaFisica pessoaFisica) throws PessoaFisicaServiceException{
         try {
-            pagamentoDao.create(pessoaFisica);
+            pessoaFisicaDao.create(pessoaFisica);
         } catch (Exception e) {
             throw new PessoaFisicaServiceException("Não foi possível criar em T_CON_PESSOA_FISICA", e);
         }
@@ -44,7 +39,7 @@ public class PessoaFisicaService implements IPessoaFisicaService {
     @Override
     public List<PessoaFisica> listAll() throws PessoaFisicaServiceException {
         try {
-            return pagamentoDao.readAll();
+            return pessoaFisicaDao.readAll();
         } catch (Exception e) {
             throw new PessoaFisicaServiceException("Não foi possível listar em T_CON_PESSOA_FISICA", e);
         }
@@ -53,7 +48,7 @@ public class PessoaFisicaService implements IPessoaFisicaService {
     @Override
     public void update(PessoaFisica pessoaFisica) throws PessoaFisicaServiceException {
         try {
-            pagamentoDao.update(pessoaFisica);
+            pessoaFisicaDao.update(pessoaFisica);
         } catch (Exception e) {
             throw new PessoaFisicaServiceException("Não foi possível atualizar em T_CON_PESSOA_FISICA", e);
         }
@@ -62,7 +57,7 @@ public class PessoaFisicaService implements IPessoaFisicaService {
     @Override
     public void delete(int id) throws PessoaFisicaServiceException{
         try {
-            pagamentoDao.delete(id);
+            pessoaFisicaDao.delete(id);
         } catch (Exception e) {
             throw new PessoaFisicaServiceException("Não foi possível excluir em T_CON_PESSOA_FISICA", e);
         }

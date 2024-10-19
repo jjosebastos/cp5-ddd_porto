@@ -5,15 +5,15 @@ public class PessoaJuridica extends Cliente {
     private String cnpj;
     private String razaoSocial;
     private String nomeFantasia;
-    private String inscricaoEstadual;
 
-    public PessoaJuridica(int idCliente, String tipoCliente, String statusCliente, String cnpj, String razaoSocial, String nomeFantasia, String inscricaoEstadual) {
+    public PessoaJuridica(int idCliente, String tipoCliente, String statusCliente, String cnpj, String razaoSocial, String nomeFantasia) {
         super(idCliente, tipoCliente, statusCliente);
         setCnpj(cnpj);
         this.razaoSocial = razaoSocial;
         this.nomeFantasia = nomeFantasia;
-        this.inscricaoEstadual = inscricaoEstadual;
     }
+
+
     public PessoaJuridica(){
         super();
     }
@@ -51,14 +51,6 @@ public class PessoaJuridica extends Cliente {
         this.nomeFantasia = nomeFantasia;
     }
 
-    public String getInscricaoEstadual() {
-        return inscricaoEstadual;
-    }
-
-    public void setInscricaoEstadual(String inscricaoEstadual) {
-        this.inscricaoEstadual = inscricaoEstadual;
-    }
-
 
     @Override
     public String toString() {
@@ -66,7 +58,7 @@ public class PessoaJuridica extends Cliente {
                 "cnpj='" + cnpj + '\'' +
                 ", razaoSocial='" + razaoSocial + '\'' +
                 ", nomeFantasia='" + nomeFantasia + '\'' +
-                ", inscricaoEstadual='" + inscricaoEstadual + '\'' +
+                ", inscricaoEstadual='" + '\'' +
                 '}';
     }
 

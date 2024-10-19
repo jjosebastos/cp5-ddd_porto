@@ -11,9 +11,7 @@ public class PessoaFisica extends Cliente {
     private String numeroCpf;
     private String genero;
 
-    public PessoaFisica() {
-        super();
-    }
+
 
     public PessoaFisica(int idCliente, String tipoCliente, String statusCliente, String nome, LocalDate dataNascimento, String numeroCpf, String genero) {
         super(idCliente, tipoCliente, statusCliente);
@@ -22,6 +20,8 @@ public class PessoaFisica extends Cliente {
         this.numeroCpf = numeroCpf;
         this.genero = genero;
     }
+    public PessoaFisica() {}
+
 
 
     @Override
@@ -79,7 +79,7 @@ public class PessoaFisica extends Cliente {
     @Override
     public String toString() {
         return "PessoaFisica{" +
-                "idCliente=" + idCliente +
+                "idCliente=" + super.getIdCliente() +
                 ", nome='" + nome + '\'' +
                 ", dataNascimento=" + dataNascimento +
                 ", numeroCpf='" + numeroCpf + '\'' +
