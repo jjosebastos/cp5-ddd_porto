@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.interfaces.PagamentoDao;
-import org.motins.entity.Pagamento;
+import org.motins.entity.pagamento.Pagamento;
 import org.motins.exception.service.PagamentoServiceException;
 import org.motins.service.impl.PagamentoServiceImpl;
 

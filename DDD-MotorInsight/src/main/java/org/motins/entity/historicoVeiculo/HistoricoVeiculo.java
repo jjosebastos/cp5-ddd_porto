@@ -1,4 +1,4 @@
-package org.motins.entity;
+package org.motins.entity.historicoVeiculo;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -17,6 +17,9 @@ public class HistoricoVeiculo {
         this.dataVenda = dataVenda;
         this.idCliente = idCliente;
         this.idVeiculo = idVeiculo;
+    }
+    public HistoricoVeiculo(){
+
     }
 
     public int getIdHistorico() {

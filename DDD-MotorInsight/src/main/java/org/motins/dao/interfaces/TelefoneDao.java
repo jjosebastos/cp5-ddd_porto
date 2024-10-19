@@ -1,6 +1,6 @@
 package org.motins.dao.interfaces;
 
-import org.motins.entity.Telefone;
+import org.motins.entity.telefone.Telefone;
 import org.motins.exception.dao.TelefoneDaoException;
 
 import java.util.List;

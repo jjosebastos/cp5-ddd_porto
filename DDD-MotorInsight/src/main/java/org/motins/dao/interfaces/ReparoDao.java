@@ -1,6 +1,6 @@
 package org.motins.dao.interfaces;
 
-import org.motins.entity.Reparo;
+import org.motins.entity.reparo.Reparo;
 import org.motins.exception.dao.ReparoDaoException;
 
 import java.util.List;

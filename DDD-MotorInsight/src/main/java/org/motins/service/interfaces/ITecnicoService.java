@@ -1,6 +1,6 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.Tecnico;
+import org.motins.entity.tecnico.Tecnico;
 import org.motins.exception.service.TecnicoServiceException;
 
 import java.util.List;

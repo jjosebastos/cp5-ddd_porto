@@ -1,6 +1,6 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.Veiculo;
+import org.motins.entity.veiculo.Veiculo;
 import org.motins.exception.service.VeiculoServiceException;
 
 import java.util.List;

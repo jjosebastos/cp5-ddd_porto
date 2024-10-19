@@ -3,7 +3,7 @@ package org.motins.service.impl;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.impl.TecnicoDaoImpl;
 import org.motins.dao.interfaces.TecnicoDao;
-import org.motins.entity.Tecnico;
+import org.motins.entity.tecnico.Tecnico;
 import org.motins.exception.service.TecnicoServiceException;
 import org.motins.service.interfaces.ITecnicoService;
 

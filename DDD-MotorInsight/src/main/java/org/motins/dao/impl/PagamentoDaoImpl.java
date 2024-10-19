@@ -2,7 +2,7 @@ package org.motins.dao.impl;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.interfaces.PagamentoDao;
-import org.motins.entity.Pagamento;
+import org.motins.entity.pagamento.Pagamento;
 import org.motins.exception.dao.PagamentoDaoException;
 
 import java.sql.*;

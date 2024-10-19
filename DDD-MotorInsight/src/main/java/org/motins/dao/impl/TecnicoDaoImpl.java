@@ -2,7 +2,7 @@ package org.motins.dao.impl;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.interfaces.TecnicoDao;
-import org.motins.entity.Tecnico;
+import org.motins.entity.tecnico.Tecnico;
 import org.motins.exception.dao.TecnicoDaoException;
 
 import java.sql.*;

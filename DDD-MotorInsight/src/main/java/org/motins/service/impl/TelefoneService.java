@@ -3,7 +3,7 @@ package org.motins.service.impl;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.interfaces.TelefoneDao;
 import org.motins.dao.impl.TelefoneDaoImpl;
-import org.motins.entity.Telefone;
+import org.motins.entity.telefone.Telefone;
 import org.motins.exception.service.TelefoneServiceException;
 import org.motins.service.interfaces.ITelefoneService;
 

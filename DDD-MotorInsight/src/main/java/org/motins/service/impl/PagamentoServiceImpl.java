@@ -3,7 +3,7 @@ package org.motins.service.impl;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.interfaces.PagamentoDao;
 import org.motins.dao.impl.PagamentoDaoImpl;
-import org.motins.entity.Pagamento;
+import org.motins.entity.pagamento.Pagamento;
 import org.motins.exception.service.PagamentoServiceException;
 import org.motins.service.interfaces.IPagamentoService;
 

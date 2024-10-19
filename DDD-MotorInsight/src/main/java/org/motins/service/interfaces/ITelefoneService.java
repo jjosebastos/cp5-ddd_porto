@@ -1,6 +1,6 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.Telefone;
+import org.motins.entity.telefone.Telefone;
 import org.motins.exception.service.TelefoneServiceException;
 
 import java.util.List;

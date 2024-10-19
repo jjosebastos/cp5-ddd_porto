@@ -3,7 +3,7 @@ package org.motins.dao.impl;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.interfaces.VeiculoDao;
-import org.motins.entity.Veiculo;
+import org.motins.entity.veiculo.Veiculo;
 import org.motins.exception.dao.VeiculoDaoException;
 
 import java.sql.*;

@@ -1,6 +1,6 @@
 package org.motins.dao.interfaces;
 
-import org.motins.entity.Veiculo;
+import org.motins.entity.veiculo.Veiculo;
 import org.motins.exception.dao.VeiculoDaoException;
 
 import java.util.List;

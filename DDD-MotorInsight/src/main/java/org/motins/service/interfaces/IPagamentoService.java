@@ -1,6 +1,6 @@
 package org.motins.service.interfaces;
 
-import org.motins.entity.Pagamento;
+import org.motins.entity.pagamento.Pagamento;
 import org.motins.exception.service.PagamentoServiceException;
 
 import java.util.List;

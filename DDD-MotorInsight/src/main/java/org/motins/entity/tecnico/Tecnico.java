@@ -1,4 +1,4 @@
-package org.motins.entity;
+package org.motins.entity.tecnico;
 
 import java.time.LocalDate;
 import java.time.Period;

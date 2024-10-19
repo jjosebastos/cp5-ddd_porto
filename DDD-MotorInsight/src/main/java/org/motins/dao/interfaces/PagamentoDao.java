@@ -1,7 +1,7 @@
 package org.motins.dao.interfaces;
 
 
-import org.motins.entity.Pagamento;
+import org.motins.entity.pagamento.Pagamento;
 import org.motins.exception.dao.PagamentoDaoException;
 
 import java.util.List;

@@ -3,7 +3,7 @@ package org.motins.service.impl;
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.interfaces.ReparoDao;
 import org.motins.dao.impl.ReparoDaoImpl;
-import org.motins.entity.Reparo;
+import org.motins.entity.reparo.Reparo;
 import org.motins.exception.service.ReparoServiceException;
 import org.motins.service.interfaces.IReparoService;
 

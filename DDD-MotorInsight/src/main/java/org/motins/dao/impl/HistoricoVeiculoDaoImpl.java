@@ -2,7 +2,7 @@ package org.motins.dao.impl;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.interfaces.HistoricoVeiculoDao;
-import org.motins.entity.HistoricoVeiculo;
+import org.motins.entity.historicoVeiculo.HistoricoVeiculo;
 import org.motins.exception.dao.HistoricoVeiculoDaoException;
 
 import java.sql.*;

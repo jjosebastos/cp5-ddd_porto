@@ -2,7 +2,7 @@ package org.motins.dao.impl;
 
 import org.motins.config.DatabaseConfig;
 import org.motins.dao.interfaces.TelefoneDao;
-import org.motins.entity.Telefone;
+import org.motins.entity.telefone.Telefone;
 import org.motins.exception.dao.TelefoneDaoException;
 
 import java.sql.*;
